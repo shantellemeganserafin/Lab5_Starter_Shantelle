@@ -1,7 +1,7 @@
 // expose.js
-window.addEventListener('DOMContentLoaded', init);
+//window.addEventListener('DOMContentLoaded', init);
 
-function init() {
+//function init() {
 
 //jsconfetti 
 const jsConfetti = new JSConfetti();
@@ -71,5 +71,5 @@ function playAudio(event){
   }
 }
 
-}
+//}
 
