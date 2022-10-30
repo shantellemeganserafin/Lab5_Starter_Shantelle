@@ -35,14 +35,19 @@ function setVoice(event){
 const button_speak = document.querySelector('button');
 button_speak.addEventListener('click', speak);
 function speak(event){
-  const curr_smile = document.querySelector('img');
-  curr_smile.src = "assets/images/smiling-open.png";
   const input = document.querySelector('textarea');
   const utterThis = new SpeechSynthesisUtterance(input.value);
   utterThis.voice = currvoice;
   window.speechSynthesis.speak(utterThis);
-  utterThis.addEventListener('end', changeSmile);
+  //startsmiling
+  utterThis.addEventListener('start', changeSmile);
   function changeSmile(event){
+    const curr_smile = document.querySelector('img');
+    curr_smile.src = "assets/images/smiling-open.png";
+  }
+  //stopsmiling
+  utterThis.addEventListener('end', stopSmile);
+  function stopSmile(event){
     const curr_smile = document.querySelector('img');
     curr_smile.src = "assets/images/smiling.png";
   }
