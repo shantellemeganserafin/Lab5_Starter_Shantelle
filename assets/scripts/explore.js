@@ -39,25 +39,18 @@ function speak(event){
   const utterThis = new SpeechSynthesisUtterance(input.value);
   utterThis.voice = currvoice;
   window.speechSynthesis.speak(utterThis);
-
   //startsmiling
   utterThis.addEventListener('start', changeSmile);
   function changeSmile(event){
     const curr_smile = document.querySelector('img');
     curr_smile.src = "assets/images/smiling-open.png";
-    //const curr_smile = document.querySelector('img');
-    //curr_smile.src = "assets/images/smiling.png";
   }
-
   //stopsmiling
   utterThis.addEventListener('end', stopSmile);
   function stopSmile(event){
-    //const curr_smile = document.querySelector('img');
-    //curr_smile.src = "assets/images/smiling-open.png";
     const curr_smile = document.querySelector('img');
     curr_smile.src = "assets/images/smiling.png";
   }
-  
 }
 
 //}
